@@ -121,7 +121,12 @@ nav{
         opacity: 1; /* Fade in the dropdown */
     }
 }
-
+ @media (max-width: 450px) {
+        .logo img {
+            height: 35px;
+            margin-left: 20px;
+        }
+    }
 
 /* Styling for the hero section container */
 .hero-container {
