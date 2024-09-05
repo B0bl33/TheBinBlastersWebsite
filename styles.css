@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Set the full-page gradient background */
+body {
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+    background: linear-gradient(45deg, #665ebc, #5950bc);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+nav{
+    margin-bottom: 5px;
+}
+/* Styling for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Noto Sans", sans-serif;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: transparent;
+}
+
+/* Logo image styling */
+.logo img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+/* Styling for navigation links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin: 0;
+    padding-right: 20px;
+}
+
+/* Styling for each nav link */
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ea6334;
+    transform: scale(1.1);
+}
+
+.nav-links li a.active {
+    color: #ffd700;
+    text-decoration: underline;
+}
+
+/* Underline effect on hover */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Menu icon styling */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    height: 40px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 950px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 8px;
+        max-height: 0;  /* Initially hidden */
+        overflow: hidden;
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+        opacity: 0; /* Start with opacity 0 */
+        z-index: 10;
+    }
+
+    .nav-links li {
+        margin-bottom: 15px;
+    }
+
+    .nav-links li a {
+        color: white;
+        font-size: 20px;
+    }
+
+    /* Show the menu icon on smaller screens */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Show the dropdown with a smooth transition */
+    .nav-links.show {
+        max-height: 500px; /* This can be adjusted based on the number of links */
+        opacity: 1; /* Fade in the dropdown */
+    }
+}
+
+
+/* Styling for the hero section container */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto; /* Adjust height of the section */
+    
+    margin-bottom: 10px;
+}
+
+/* Styling for the hero image */
+.hero-image {
+    max-width: 80%; /* The image will take up 80% of the container's width */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s ease; /* Add transition for scaling effect */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 2s ease-in;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.hero-image.fade-in {
+    opacity: 1; /* Show the image */
+}
+
+span{
+    color: #ff783e;
+}
+
+/* The Modal (hidden by default) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Close Button */
+.close {
+    color: #333;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #ea6334;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.hero-button {
+    
+    background-color: #ea6334;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #ff8a50;
+}
+
+
+
+
+/* Styling for the button */
+.hero-button {
+   margin-bottom: 5px;
+    margin-top: 5px; /* Space between image and button */
+    padding: 15px 30px; /* Padding inside the button */
+    font-size: 1.2rem; /* Font size */
+    color: white; /* Text color */
+    background-color: #ea6334; /* Button background color */
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect for button */
+.hero-button:hover {
+    background-color: #ff8a50; /* Lighter orange on hover */
+    transform: scale(1.05); /* Slight scale up on hover */
+}
+
+/* Active button state */
+.hero-button:active {
+    background-color: #d95e29; /* Darker orange when clicked */
+    transform: scale(0.98); /* Slight scale down on click */
+}
+/* Phone number animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        color: #ff783e; /* Initial color */
+    }
+    50% {
+        transform: scale(1.1); /* Slightly larger */
+        color: #ffd700; /* Change to yellow */
+    }
+    100% {
+        transform: scale(1);
+        color: #ff783e; /* Back to original color */
+    }
+}
+
+/* Apply animation to the phone number */
+.phone-number {
+    animation: pulse 2s infinite; /* Run the animation every 2 seconds, infinitely */
+    font-weight: bold; /* Make the phone number bold */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+
+/* Adjusting the card styling */
+.card {
+    background-color: white; /* White background for a clean look */
+    border-radius: 15px; /* Rounded corners */
+    border: none; /* Remove default border */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.card-title {
+    color: #ea6334; /* Consistent orange color for titles */
+    font-weight: bold;
+}
+
+.card-text {
+    color: #333; /* Darker text for readability */
+}
+
+/* Fade-in effect for card images */
+.card-image {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 2s ease-in; /* Smooth transition over 2 seconds */
+}
+
+/* After the page loads, apply the fade-in effect */
+.card-image.fade-in {
+    opacity: 1; /* Fully visible after fade-in */
+}
+
+
+/* FAQ section styling */
+#accordion .card {
+    background-color: white; /* Match other cards */
+    border: none; /* Remove default border */
+    border-radius: 15px; /* Rounded corners like other cards */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 15px; /* Add some spacing between FAQ cards */
+}
+
+#accordion .card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+#accordion .card-header {
+    background-color: transparent; /* Transparent background for header */
+    border-bottom: none; /* Remove the default border */
+    padding: 15px;
+    cursor: pointer;
+}
+
+#accordion .btn-link {
+    color: #ea6334; /* Consistent orange color for links */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+#accordion .btn-link:hover {
+    color: #ff8a50; /* Lighter orange on hover */
+    text-decoration: underline;
+}
+
+#accordion .card-body {
+    color: #333; /* Darker text for readability */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for the body */
+    border-radius: 0 0 15px 15px; /* Rounded corners on the bottom */
+}
+
+#accordion .card-body.show {
+    display: block;
+}
+
+/* Ensure the FAQ cards look good on smaller screens */
+@media (max-width: 768px) {
+    #accordion .card {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Ensure cards have good spacing and alignment on different screens */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Media query for screens smaller than 1100px */
+@media (max-width: 1100px) {
+    .hero-container {
+        height: auto; /* Allow the container to adjust to the content height */
+         
+    }
+}
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .hero-image {
+        max-width: 90%; /* Adjust image size on smaller screens */
+    }
+
+    .hero-button {
+        font-size: 1rem; /* Adjust button size on smaller screens */
+        padding: 12px 24px; /* Adjust padding on smaller screens */
+    }
+}
