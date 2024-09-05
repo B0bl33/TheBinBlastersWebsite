@@ -101,6 +101,7 @@ nav{
         z-index: 10;
     }
 
+
     .nav-links li {
         margin-bottom: 15px;
     }
@@ -121,12 +122,13 @@ nav{
         opacity: 1; /* Fade in the dropdown */
     }
 }
- @media (max-width: 450px) {
-        .logo img {
-            height: 35px;
-            margin-left: 20px;
-        }
+@media (max-width: 450px) {
+    .logo img {
+        height: 35px;
+        margin-left: 20px;
     }
+}
+
 
 /* Styling for the hero section container */
 .hero-container {
@@ -398,5 +400,29 @@ span{
     .hero-button {
         font-size: 1rem; /* Adjust button size on smaller screens */
         padding: 12px 24px; /* Adjust padding on smaller screens */
+    }
+}
+/* Ensure the modal and form adjust on screens smaller than 500px */
+/* Ensure the modal and form adjust on screens smaller than 500px */
+@media (max-width: 500px) {
+    .modal-content {
+        display: flex;
+        flex-direction: column;  /* Make the modal content a flex container */
+        width: 90%; /* Take up 90% of the screen width on smaller screens */
+        max-width: 90%; /* Ensure modal width doesn't exceed 90% */
+        min-height: 60vh;  /* Ensure the modal has a minimum height */
+        max-height: 90vh;  /* Ensure the modal fits within the viewport */
+        padding: 10px; /* Adjust padding for smaller screens */
+        overflow-y: auto;  /* Enable vertical scrolling if content overflows */
+    }
+
+    iframe {
+        flex-grow: 1;  /* Allow the iframe to grow and fill the available space */
+        width: 100%;  /* Ensure the iframe takes up the full width */
+        border: none;  /* Remove the border from the iframe */
+    }
+
+    .close {
+        font-size: 24px; /* Adjust close button size on smaller screens */
     }
 }
